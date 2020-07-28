@@ -81,13 +81,13 @@ const colors = {
 
   // Ball Color
   ballText: '#FFF',
-  ballBackground: '#94a6be',
+  ballBackground: '#424446',
 
   todayBallBackground: '#34495E',
   todayBallText: '#FFF',
 
   bonusBallText: '#FFF',
-  bonusBallBackground: '#05bfec',
+  bonusBallBackground: '#0d4880',
 
   matchBallText: '#FFF',
   matchBallBackground: '#ED412D',
