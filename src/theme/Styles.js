@@ -131,6 +131,9 @@ const styles = {
     div: {
       color: Colors.textDefault
     },
+    a: {
+      color: Colors.navigationBackground
+    },
     p: {
       color: Colors.textDefault
     },
