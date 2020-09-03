@@ -38,7 +38,7 @@ const colors = {
 
   // drawer colors
   drawerBackground: '#FFF',
-  drawerBackgroundHighlight: '#1F7BD2',
+  drawerBackgroundHighlight: '#247000',
   drawerShadow: '#AAA',
   drawerBorder: '#EAEAEA',
   drawerText: '#1A314D',

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1013776820476",
+    "firebase_url": "https://loteriasdemexico-mrl.firebaseio.com",
+    "project_id": "loteriasdemexico-mrl",
+    "storage_bucket": "loteriasdemexico-mrl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013776820476:android:51293a54a2ed3cd1bb8f79",
+        "android_client_info": {
+          "package_name": "com.kiskoo.lotterymexico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013776820476-8pdg041u9bplfjbppf7v27na250flqqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj6XP6Cl7cRS7AwAJ3FtoHmzcQWhWDB9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013776820476-8pdg041u9bplfjbppf7v27na250flqqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
