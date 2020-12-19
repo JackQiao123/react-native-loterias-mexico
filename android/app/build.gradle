@@ -132,8 +132,9 @@ android {
         applicationId "com.kiskoo.lotterymexico"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 14
-        versionName "2.0.4"
+        multiDexEnabled true
+        versionCode 16
+        versionName "4.0"
     }
     splits {
         abi {
@@ -202,6 +203,13 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
+    implementation "com.android.support:multidex:1.0.3"
+
+    implementation project(':react-native-firebase')
+    implementation "com.google.android.gms:play-services-base:16.1.0"
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation "com.google.firebase:firebase-ads:17.2.1"
+
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
@@ -231,3 +239,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+apply plugin: "com.android.application"
+apply plugin: "com.google.gms.google-services"

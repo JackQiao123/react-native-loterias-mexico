@@ -108,7 +108,7 @@ const CommonWidget = {
 
   renderCircleNumber(number, index, recentlyUpdated = false) {
     const str = number;
-    const res = str.replace('+', '').replace('=', '').replace('!', '').replace('?', '');
+    const res = str.replace('+', '').replace('=', '').replace('!', '').replace('?', '').trim();
     
     let color;
     let backgroundColor;

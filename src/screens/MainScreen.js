@@ -6,8 +6,8 @@ import {
 
 import Drawer from 'react-native-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome';
-// import firebase from 'react-native-firebase';
 
+import firebase from 'react-native-firebase';
 import { increaseRewarded } from '../actions/global';
 import TreeView from '../components/general/TreeView';
 import NavigationBar from '../components/custom/NavigationBar';
@@ -22,7 +22,6 @@ import MenuScreen from './MenuScreen';
 import CompanyScreen from './CompanyScreen';
 import GameScreen from './GameScreen';
 
-// const { Banner, AdRequest } = firebase.admob;
 const { MENU_TYPE, SCREEN_TYPE } = CONFIG.ENUMS;
 
 class MainScreen extends Component {
@@ -73,7 +72,7 @@ class MainScreen extends Component {
       menuItem: node
     });
 
-    if (this.props.global.rewardedCount >= CONFIG.ADMOB.REWARDED_MAX) {
+    if (this.props.global.rewardedCount != 0 && this.props.global.rewardedCount % CONFIG.ADMOB.REWARDED_MAX == 0) {
       this.showInterstitial();
     }
     this.props.increaseRewarded();
@@ -124,11 +123,6 @@ class MainScreen extends Component {
     this.setState({ loadingRefreshIni: true });
     const ini = await Api.getIni();
     if (!this.unmounted) {
-      if (ini) {
-        const menuListData = AppHelper.getMenuList(ini);
-        this.drawerContent.updateDataById(menuListData);
-        this.drawerContent.selectNode(this.drawerContent.getSelectedNode(), { trigger: false, toggle: false });
-      }
       this.setState({ loadingRefreshIni: false });
       if (this.currentScreen && this.currentScreen.refresh) {
         this.currentScreen.refresh();
@@ -176,26 +170,24 @@ class MainScreen extends Component {
   }
 
   requestInterstitial() {
-    // const request = new AdRequest();
-    // request.addKeyword('interstitial');
-    // this.interstitial = firebase.admob().interstitial(CONFIG.ADMOB.SECRETS.INTERSTITIAL);
-    // this.interstitial.on('onAdLoaded', () => {
-    //   console.log('loaded');
-    // });
+    this.interstitial = firebase.admob().interstitial(CONFIG.ADMOB.SECRETS.INTERSTITIAL);
 
-    // this.interstitial.on('onAdClosed', () => {
-    //   console.log('closed');
-    //   this.props.increaseRewarded(true);
-    //   this.requestInterstitial();
-    // });
-    // this.interstitial.loadAd(request.build());
+    const AdRequest = firebase.admob.AdRequest;
+    const request = new AdRequest();
+
+    this.interstitial.loadAd(request.build());
+
+    this.interstitial.on('onAdClosed', () => {
+      this.requestInterstitial();
+    });
   }
 
   showInterstitial() {
-    // if (this.interstitial && this.interstitial.isLoaded()) {
-    //   firebase.analytics().logEvent('interstitial', { showRewarded: true });
-    //   this.interstitial.show();
-    // }
+    if (this.interstitial) {
+      if (this.interstitial.isLoaded()) {
+        this.interstitial.show();
+      }
+    }
   }
 
   keyExtractor(item, index) {
@@ -275,6 +267,10 @@ class MainScreen extends Component {
   }
 
   render() {
+    const Banner = firebase.admob.Banner;
+    const AdRequest = firebase.admob.AdRequest;
+    const request = new AdRequest();
+
     const drawerContent = (
       <TreeView
         data={this.menuData}
@@ -306,12 +302,11 @@ class MainScreen extends Component {
           <View style={Styles.container}>
             {this.state.menuItem === null ? CommonWidget.renderActivityIndicator() : this.renderScreen()}
           </View>
-          {/* <Banner
-            key={this.props.global.rewardedCount === CONFIG.ADMOB.REWARDED_MAX}
+          <Banner
             unitId={CONFIG.ADMOB.SECRETS.BANNER}
-            request={new AdRequest().build()}
-            onAdLoaded={() => {}}
-          /> */}
+            size={'SMART_BANNER'}
+            request={request.build()}
+          />
         </Drawer>
       </View>
     );

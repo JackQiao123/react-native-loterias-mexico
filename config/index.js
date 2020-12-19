@@ -15,8 +15,8 @@ const config = {
         INTERSTITIAL: 'ca-app-pub-1196303242456869/9595316835'
       },
       android: {
-        BANNER: 'ca-app-pub-1196303242456869/7869307636',
-        INTERSTITIAL: 'ca-app-pub-1196303242456869/8118583631'
+        BANNER: 'ca-app-pub-1196303242456869/1506846435',
+        INTERSTITIAL: 'ca-app-pub-1196303242456869/2449693633'
       }
     })
   },
@@ -28,7 +28,7 @@ const config = {
   },
 
   VIEW_OPTIONS: {
-    THEME: 'default',
+    THEME: 'green',
     INITIAL_MENU: {
       ID: 'home',
       OPTIONS: {

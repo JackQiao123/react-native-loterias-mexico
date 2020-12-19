@@ -1,4 +1,4 @@
-package com.loterias;
+package com.kiskoo.lotterymexico;
 
 import com.facebook.react.ReactActivity;
 

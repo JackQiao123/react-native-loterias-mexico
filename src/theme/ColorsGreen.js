@@ -1,7 +1,7 @@
 const colors = {
   primary: '#4285F4',
   info: '#05bfec',
-  success: '#019C00',
+  success: '#2DA94F',
   danger: '#ED412D',
   warning: '#FDBD00',
   transparent: 'transparent',
@@ -11,83 +11,83 @@ const colors = {
   caretHighlight: '#01AA00',
 
   // main background
-  background: '#EAEAEA',
+  background: '#ECEFF1',
 
   // banner
-  bannerBackground: '#577552',
+  bannerBackground: '#ECEFF1',
 
   // activityIndicator color
-  activityIndicator: '#125700',
+  activityIndicator: '#1A314D',
 
   // text colors
-  textMuted: '#577552',
+  textMuted: '#80847A',
 
-  textDefaultShadow: '#073001',
-  textDefault: '#073001',
-  textDefaultLighten: '#577552',
+  textDefaultShadow: '#1A314D',
+  textDefault: '#2B425E',
+  textDefaultLighten: '#435770',
 
-  inputText: '#342B1D',
+  inputText: '#2B425E',
   inputTextDisabled: '#AAA',
   inputTextBackground: '#FFF',
   inputTextBorder: '#DDD',
 
   // component colors
   navigationBackground: '#247000',
-  navigationShadow: '#0C4D03',
+  navigationShadow: '#b93400',
   navigationText: '#FFF',
 
   // drawer colors
   drawerBackground: '#FFF',
-  drawerBackgroundHighlight: '#073001',
-  drawerShadow: '#999',
+  drawerBackgroundHighlight: '#247000',
+  drawerShadow: '#AAA',
   drawerBorder: '#EAEAEA',
-  drawerText: '#073001',
+  drawerText: '#1A314D',
   drawerTextHighlight: '#FFF',
-  drawerTextMuted: '#577552',
-  drawerTextMutedHighlight: '#FFF',
+  drawerTextMuted: '#80847A',
+  drawerTextMutedHighlight: '#EAEAEA',
 
   // breedcrumb
   breedCrumbBackground: '#DEE2E5',
   breedCrumbBorder: '#BCC0C3',
-  breedCrumbText: '#073001',
-  breedCrumbTextMuted: '#577552',
+  breedCrumbText: '#1A314D',
+  breedCrumbTextMuted: '#80847A',
 
   // menuItem
   menuItemBackground: '#FFF',
   menuItemBorder: '#DDD',
-  menuItemText: '#073001',
-  menuItemTextMuted: '#577552',
+  menuItemText: '#1A314D',
+  menuItemTextMuted: '#80847A',
 
-  menuItemBackgroundHighlight: '#073001',
-  menuItemBorderHighlight: '#247000',
-  menuItemTextHighlight: '#FFF',
-  menuItemTextMutedHighlight: '#EAEAEA',
+  menuItembBackgroundHighlight: '#DEE2E5',
+  menuItemBorderHighlight: '#BCC0C3',
+  menuItemTextHighlight: '#1A314D',
+  menuItemTextMutedHighlight: '#80847A',
 
   // section
   sectionBackground: '#FFF',
 
   // barChart
-  chartAxis: '#073001',
-  chartLine: '#247000',
+  chartAxis: '#34495E',
+  chartLine: '#2980B9',
   chartGrid: '#888',
 
   // Score Card
   scoreCardBackground: '#FFF',
   scoreCardBorder: '#DDD',
 
-  scoreCardDateBackgroundHighlight: '#073001',
-  scoreCardDateBackground: '#577552',
+  scoreCardDateBackgroundHighlight: '#34495E',
+  scoreCardDateBackground: '#94a6be',
   scoreCardDateText: '#FFF',
 
   // Ball Color
   ballText: '#FFF',
-  ballBackground: '#577552',
+  ballBackground: '#424446',
 
   todayBallBackground: '#073001',
   todayBallText: '#FFF',
 
   bonusBallText: '#FFF',
-  bonusBallBackground: '#00C201',
+  bonusBallBackground: '#000',
 
   matchBallText: '#FFF',
   matchBallBackground: '#ED412D',
@@ -96,11 +96,11 @@ const colors = {
   wrongBallBackground: '#4285F4',
 
   // table
-  tableHeaderBackground: '#EAEAEA',
-  tableHeaderText: '#073001',
-  tableHeaderBorder: '#C8C8C8',
+  tableHeaderBackground: '#ECEFF1',
+  tableHeaderText: '#2B425E',
+  tableHeaderBorder: '#BCC0C3',
   tableItemBackground: '#FFF',
-  tableItemText: '#073001'
+  tableItemText: '#1A314D'
 };
 
 export default colors;
