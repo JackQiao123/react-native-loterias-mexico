@@ -3,8 +3,7 @@ import {
   Animated, Image, Text, TouchableOpacity, View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import I18n from 'react-native-i18n';
-import DatePicker from 'react-native-datepicker';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
 import AppHelper from '../../helpers/AppHelper';
 import { Colors, Fonts, Metrics } from '../../theme';
@@ -85,6 +84,7 @@ class BreedCrumb extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      show: false,
       date: new Date()
     };
   }
@@ -97,11 +97,25 @@ class BreedCrumb extends Component {
     this.cycleAnimation();
   }
 
-  onCalendarPress(date) {
+  onCalendarPress() {
     this.setState({
+      show: true
+    });
+  }
+
+  onChangeDate(value) {
+    let date = new Date(value);
+
+    this.setState({
+      show: false,
       date
     });
-    this.props.onCalendarPress(date);
+
+    let yy = date.getFullYear();
+    let mm = date.getMonth() + 1;
+    let dd = date.getDate();
+    let full = yy + '-' + (mm > 9 ? '' : '0') + mm + '-' + (dd > 9 ? '' : '0') + dd;
+    this.props.onCalendarPress(full);
   }
 
   cycleAnimation() {
@@ -118,6 +132,7 @@ class BreedCrumb extends Component {
   render() {
     const { LAYOUTS } = CONFIG.VIEW_OPTIONS;
     const { menu } = this.props;
+    const { show } = this.state;
 
     const caretColor = this.animatedValue.interpolate({
       inputRange: [0, 180, 180, 360],
@@ -157,16 +172,17 @@ class BreedCrumb extends Component {
         {
           (menu.menuType === MENU_TYPE.GAME || (menu.menuType === MENU_TYPE.COMPANY && LAYOUTS.SHOW_ALL_GAMES_AT_COMPANY)) ? (
             <View style={[styles.breedCrumbSide]}>
-              <DatePicker
-                style={[styles.breedCrumbButton, styles.breedCrumbCalendar]}
-                date={this.state.date}
+              <TouchableOpacity
+                style={styles.breedCrumbButton}
+                onPress={this.onCalendarPress.bind(this)}
+              >
+                <Icon style={styles.breedCrumbButtonIcon} name="calendar" />
+              </TouchableOpacity>
+              <DateTimePickerModal
+                isVisible={show}
                 mode="date"
-                hideText
-                format="YYYY-MM-DD"
-                confirmBtnText={I18n.t('confirm')}
-                cancelBtnText={I18n.t('cancel')}
-                iconComponent={<Icon style={styles.breedCrumbButtonIcon} name="calendar" />}
-                onDateChange={this.onCalendarPress.bind(this)}
+                onConfirm={this.onChangeDate.bind(this)}
+                onCancel={() => this.setState({show: false})}
               />
               <TouchableOpacity style={styles.breedCrumbButton} onPress={this.props.onRefreshPress}>
                 <Icon style={styles.breedCrumbButtonIcon} name="refresh" />
