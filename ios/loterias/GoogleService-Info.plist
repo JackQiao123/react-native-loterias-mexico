@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1013776820476-fl4522tbgnr9g4faprdoj6a0271c28nb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1013776820476-fl4522tbgnr9g4faprdoj6a0271c28nb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD7EZQ05wSKUrC_bOHJydSWX3RLGIfH8cQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1013776820476</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mrl.loteriasdemexico</string>
+	<key>PROJECT_ID</key>
+	<string>loteriasdemexico-mrl</string>
+	<key>STORAGE_BUCKET</key>
+	<string>loteriasdemexico-mrl.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1013776820476:ios:d8436e7f126f4830bb8f79</string>
+	<key>DATABASE_URL</key>
+	<string>https://loteriasdemexico-mrl.firebaseio.com</string>
+</dict>
+</plist>
